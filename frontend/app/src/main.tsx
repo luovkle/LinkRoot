@@ -1,19 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./App";
-import { Auth0Provider } from "@auth0/auth0-react";
 import "./index.css";
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { Home, Layout, Profile } from "./pages";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true, 
+        element: < Home />
+      },
+      {
+        path: "profile",
+        element: < Profile />
+      }
+    ]
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Auth0Provider
-      domain={import.meta.env.VITE_AUTH0_DOMAIN}
-      clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
-      authorizationParams={{
-        redirect_uri: window.location.origin,
-      }}
-    >
-      <App />
-    </Auth0Provider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
