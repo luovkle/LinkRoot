@@ -15,14 +15,6 @@ export const Home = () => {
           <p className="text-white">Join 30M+ people using Linktree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
         </div>
         <div className="flex-1">
-          <div className="backdrop-blur-sm bg-white/20 w-1/2 border-red-500 rounded-md
-            m-auto p-4 h-24 my-80">
-            <ul className="text-white ">
-              <li>Link 1</li>
-              <li>Link 2</li>
-              <li>Link 3</li>
-            </ul>
-          </div>
         </div>
       </div>
       <div className="bg-gradient-to-b from-pink-400 via-cyan-800 to-orange-500

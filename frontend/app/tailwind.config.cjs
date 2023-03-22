@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'sm': '360px'
+      },
       fontFamily: {
         'logo': ['Lobster', 'sans']
       },
