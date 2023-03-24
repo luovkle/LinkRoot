@@ -7,7 +7,7 @@ module.exports = {
         'sm': '360px'
       },
       fontFamily: {
-        'logo': ['Lobster', 'sans']
+        'Lobster': ['Lobster', 'cursive']
       },
       flex: {
         '2': '2 2 0%',
@@ -15,5 +15,4 @@ module.exports = {
       }
     },
   },
-  plugins: [],
 };

@@ -9,7 +9,7 @@ export const Home = () => {
   return (
     <>
       <div className="
-        h-screen flex">
+        h-screen flex bg-red-900/40">
         <div className="flex-1">
           <h1 className="text-white ">Everything you are. In one, simple link in bio</h1>
           <p className="text-white">Join 30M+ people using Linktree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
