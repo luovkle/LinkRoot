@@ -1,34 +1,30 @@
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import { CloudinaryImage } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
+import "../assets/css/Home.css";
 
 const myImage = new CloudinaryImage('sample', {cloudName: 'dfsye00dj'})
   .resize(fill().width(300).height(350));
 
 export const Home = () => {
   return (
-    <>
-      <div className="
-        h-screen flex">
-        <div className="flex-1">
-          <h1 className="text-white ">Everything you are. In one, simple link in bio</h1>
-          <p className="text-white">Join 30M+ people using Linktree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
-        </div>
-        <div className="flex-1">
+    <div className="pt-10 pb-10 h-screen bg-gray-200 dark:bg-neutral-900 dark:text-white">
+      <div className="w-full flex justify-center mb-8">
+        <div className="">
+          <h1 className="font-bold text-center text-7xl mb-3 text-black dark:text-white">Welcome to LinkRoot</h1>
+          <h2 className="text-center px-4 text-black dark:text-white">Link Smarter, Not Harder: With LinkRoot, The Smart Page To Manage Your Links.</h2>
+          <button className="block mx-auto mt-5 bg-red-500 font-bold">Get started</button>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-pink-400 via-cyan-800 to-orange-500
-        h-screen flex text-white">
-        <div className="flex-1">Hola</div>
-        <div className="flex-1">
-          <div>
-            <h1>Create and customize your Linktree in minutes</h1>
-          </div>
-          <div>
-            <p>Connect your TikTok, Instagram, Twitter, website, store, videos, music, podcast, events and more. It all comes together in a link in bio landing page designed to convert.</p>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 m-4 rounded py-8 bg-slate-600/50 backdrop-blur-md">
+        <div className="pl-8 pr-8">
+          <img src="https://cdn-icons-png.flaticon.com/512/6041/6041531.png" alt="img" className="block mx-auto mb-5 max-w-full max-h-80"/>
+        </div>
+        <div className="pr-8 pl-8">
+          <h1 className="text-right font-bold mb-2 text-4xl">Beautiful</h1>
+          <h2 className="text-sm text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel fuga omnis modi, fugit facere labore. Incidunt nesciunt architecto ullam deserunt hic quam sapiente cupiditate alias, similique vero, non repellat natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus optio debitis quibusdam illum molestias omnis doloremque vel porro earum quam, voluptas nostrum dolor! Perspiciatis modi quisquam culpa molestiae reiciendis asperiores!</h2>
         </div>
       </div>
-    </>
-  )
+    </div>
+  );
 }
