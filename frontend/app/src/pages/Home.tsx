@@ -27,7 +27,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="neon-background blur-2xl opacity-20 absolute bottom-0 -z-10 w-full h-2/5 rounded"></div>
+      <div className="gradient-background blur-2xl opacity-20 absolute bottom-0 -z-10 w-full h-2/5 rounded"></div>
     </div>
   );
 }
