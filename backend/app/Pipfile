@@ -8,6 +8,7 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 pymongo = {extras = ["srv"], version = "*"}
 python-dotenv = "*"
+pyjwt = {extras = ["crypto"], version = "*"}
 
 [dev-packages]
 
