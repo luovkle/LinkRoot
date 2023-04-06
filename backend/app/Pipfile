@@ -9,6 +9,7 @@ uvicorn = {extras = ["standard"], version = "*"}
 pymongo = {extras = ["srv"], version = "*"}
 python-dotenv = "*"
 pyjwt = {extras = ["crypto"], version = "*"}
+python-multipart = "*"
 
 [dev-packages]
 
