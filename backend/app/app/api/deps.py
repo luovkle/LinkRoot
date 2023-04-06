@@ -14,3 +14,7 @@ def verify_token(token: HTTPAuthorizationCredentials = Depends(token_auth_scheme
             status_code=status.HTTP_401_UNAUTHORIZED, detail=result.get("msg", "")
         )
     return result
+
+
+def get_user(token: dict = Depends(verify_token)):
+    return token["sub"]
