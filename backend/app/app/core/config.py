@@ -18,5 +18,11 @@ class Settings(BaseSettings):
     # DB
     DB_URI: str = os.getenv("DB_URI", "")
 
+    # AUTH0
+    AUTH0_DOMAIN: str = os.getenv("DOMAIN", "")
+    AUTH0_API_AUDIENCE: str = os.getenv("API_AUDIENCE", "")
+    AUTH0_ISSUER: str = os.getenv("ISSUER", "")
+    AUTH0_ALGORITHMS: str = os.getenv("ALGORITHMS", "")
+
 
 settings = Settings()
