@@ -1,4 +1,9 @@
+import os
+
 from pydantic import BaseSettings
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Settings(BaseSettings):
@@ -9,6 +14,9 @@ class Settings(BaseSettings):
     MIDDLEWARE_ALLOW_METHODS: list[str] = ["*"]
     MIDDLEWARE_ALLOW_HEADERS: list[str] = ["*"]
     API_V1_STR: str = "/api/v1"
+
+    # DB
+    DB_URI: str = os.getenv("DB_URI", "")
 
 
 settings = Settings()
