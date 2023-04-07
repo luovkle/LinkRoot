@@ -3,13 +3,12 @@ from fastapi.encoders import jsonable_encoder
 from pymongo.database import Database
 
 from app.schemas.link import Link, LinkCreate, LinkUpdate
-
-limit = 10
+from app.core.config import settings
 
 
 class CRUDLink:
     def _get_by_user(self, db: Database, user: str):
-        return list(db.links.find({"user": user}).limit(limit))
+        return list(db.links.find({"user": user}).limit(settings.CRUD_LINKS_LIMIT))
 
     def _get_by_id(self, db: Database, user: str, id: str):
         doc = db.links.find_one({"user": user, "_id": id})
@@ -18,7 +17,11 @@ class CRUDLink:
         return doc
 
     def _allow_new_doc(self, db: Database, user: str):
-        return False if db.links.count_documents({"user": user}) >= limit else True
+        return (
+            False
+            if db.links.count_documents({"user": user}) >= settings.CRUD_LINKS_LIMIT
+            else True
+        )
 
     def create(self, db: Database, user: str, link: LinkCreate):
         if not self._allow_new_doc(db, user):

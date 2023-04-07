@@ -24,5 +24,8 @@ class Settings(BaseSettings):
     AUTH0_ISSUER: str = os.getenv("ISSUER", "")
     AUTH0_ALGORITHMS: str = os.getenv("ALGORITHMS", "")
 
+    # CRUD
+    CRUD_LINKS_LIMIT: int = 10
+
 
 settings = Settings()
