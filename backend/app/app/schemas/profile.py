@@ -15,7 +15,6 @@ class Profile(ProfileBase):
 
 
 class ProfileRead(ProfileBase):
-    id: str = Field(alias="_id")
     picture_url: HttpUrl
 
 
