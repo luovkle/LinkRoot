@@ -28,8 +28,8 @@ class CRUDLink:
             raise HTTPException(
                 status.HTTP_403_FORBIDDEN, "Maximum number of elements reached"
             )
-        link_db = jsonable_encoder(Link.parse_obj(link))
-        id = db.links.insert_one({"user": user, **link_db}).inserted_id
+        link_db = jsonable_encoder(Link.parse_obj({"user": user, **link.dict()}))
+        id = db.links.insert_one(link_db).inserted_id
         return self._get_by_id(db, user, id)
 
     def read_one(self, db: Database, user: str, id: str):

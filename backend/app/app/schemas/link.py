@@ -10,6 +10,7 @@ class LinkBase(BaseModel):
 
 class Link(LinkBase):
     id: str = Field(default_factory=uuid4, alias="_id")
+    user: str
 
 
 class LinkCreate(LinkBase):
