@@ -1,4 +1,4 @@
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, status, Request
 from fastapi.security import HTTPBearer
 from fastapi.security.http import HTTPAuthorizationCredentials
 
@@ -23,3 +23,7 @@ def get_user(token: dict = Depends(verify_token)):
 
 def get_db():
     return client.app
+
+
+def get_access_token(request: Request):
+    return request.headers["Authorization"].split()[1]
