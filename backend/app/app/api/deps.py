@@ -3,6 +3,7 @@ from fastapi.security import HTTPBearer
 from fastapi.security.http import HTTPAuthorizationCredentials
 
 from app.utils.jwt import VerifyToken
+from app.db.client import client
 
 token_auth_scheme = HTTPBearer()
 
@@ -18,3 +19,7 @@ def verify_token(token: HTTPAuthorizationCredentials = Depends(token_auth_scheme
 
 def get_user(token: dict = Depends(verify_token)):
     return token["sub"]
+
+
+def get_db():
+    return client.app
