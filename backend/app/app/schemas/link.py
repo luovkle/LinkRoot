@@ -1,11 +1,11 @@
 from uuid import uuid4
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 
 
 class LinkBase(BaseModel):
     title: str
-    url: str
+    url: HttpUrl
 
 
 class Link(LinkBase):
@@ -22,4 +22,4 @@ class LinkRead(LinkBase):
 
 class LinkUpdate(BaseModel):
     title: str | None = None
-    url: str | None = None
+    url: HttpUrl | None = None
